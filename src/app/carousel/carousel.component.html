@@ -1,0 +1,10 @@
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor="let car of cars">
+        <div class="picsum-img-wrapper">
+            <img class="ratio" style="width: auto;height: 800px;max-height: 800px;" alt="Responsive image" [src]="car.imageUrl"/>
+        </div>
+        <div class="carousel-caption">
+            <h3>{{car.brand}} {{car.model}}</h3>
+        </div>
+    </ng-template>
+</ngb-carousel>

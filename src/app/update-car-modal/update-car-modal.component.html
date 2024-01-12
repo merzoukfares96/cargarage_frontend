@@ -1,0 +1,91 @@
+<div
+  class="modal fade"
+  id="updateCarModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="carEditModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateCarModalLabel">Edit the {{editCar?.brand}} {{editCar?.model}}</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="onCloseModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="brand">Brand</label>
+            <input
+              type="text"
+              ngModel="{{editCar?.brand}}"
+              name="brand"
+              class="form-control"
+              id="brand"
+              placeholder="Brand"
+              required
+            />
+          </div>
+          <input type="hidden" ngModel="{{editCar?.id}}" name="id" class="form-control" id="id" placeholder="Id">
+          <div class="form-group">
+            <label for="model">Model</label>
+            <input
+              type="text"
+              ngModel="{{editCar?.model}}"
+              name="model"
+              class="form-control"
+              id="model"
+              placeholder="Model"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input
+              type="text"
+              ngModel="{{editCar?.year}}"
+              name="year"
+              class="form-control"
+              id="year"
+              placeholder="Year"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input
+              type="text"
+              ngModel="{{editCar?.imageUrl}}"
+              name="imageUrl"
+              class="form-control"
+              id="imageUrl"
+              placeholder="Image URL"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="add-car-form"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              (click)="onCloseModal()"
+            >
+              Close
+            </button>
+            <button (click)="onUpdateCar(editForm.value)" type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,7 @@ declare var window:any;
 export class AppComponent implements OnInit {
   public editCar: Car | null;
   addModal: any;
+  registerModal: any;
   updateModal: any;
   deleteModal: any;
   public cars: Car[];
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCars();
+    this.registerModal = new window.bootstrap.Modal(
+      document.getElementById("registerModal")
+    );
     this.addModal = new window.bootstrap.Modal(
       document.getElementById("addCarModal")
     );
@@ -40,6 +44,9 @@ export class AppComponent implements OnInit {
   public onOpenModal(car: Car, mode: string): void {
     if (mode === 'add') {
       this.addModal.show();
+    }
+    else if (mode === 'register') {
+      this.registerModal.show();
     }
     else if (mode === 'edit') {
       this.editCar = car

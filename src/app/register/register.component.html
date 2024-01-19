@@ -1,0 +1,41 @@
+<div 
+    class="modal fade" 
+    id="registerModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCarModalLabel">Register your account</h5>
+                <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="onCloseModal()"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #registerForm="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary" (click)="save()">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

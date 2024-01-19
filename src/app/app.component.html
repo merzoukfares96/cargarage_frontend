@@ -42,9 +42,24 @@
         placeholder="Search cars..."
         required
       />
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a type="button" class="nav-link" href="#"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item active">
+          <a type="button" class="nav-link" (click)="onOpenModal(null!, 'register')"
+            >Register</a
+          >
+        </li>
+      </ul>
     </form>
   </div>
 </nav>
+<div class="p-4">
+  <app-register (closeModal)="onCloseModal(registerModal)"></app-register>
+</div>
 <div style="padding-left: 20rem ;padding-right: 20rem ; padding-top: 2rem ;padding-bottom: 2rem ;">
   <app-carousel [cars]="cars" ></app-carousel>
 </div>

@@ -11,9 +11,11 @@ import { UpdateCarModalComponent } from './update-car-modal/update-car-modal.com
 import { DeleteCarModalComponent } from './delete-car-modal/delete-car-modal.component';
 import { NotifierModule } from 'angular-notifier';
 import { CarouselComponent } from './carousel/carousel.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, AddCarModalComponent, UpdateCarModalComponent, DeleteCarModalComponent, CarouselComponent],
+  declarations: [AppComponent, AddCarModalComponent, UpdateCarModalComponent, DeleteCarModalComponent, CarouselComponent, RegisterComponent, LoginComponent],
   imports: [BrowserModule, HttpClientModule, NgbModule, FormsModule, NotifierModule.withConfig({
     position: {
       horizontal: {
@@ -25,7 +27,8 @@ import { CarouselComponent } from './carousel/carousel.component';
       }
     },
     behaviour: {
-      onClick: "hide"
+      onClick: "hide",
+      autoHide: 2000
     }
   })],
   providers: [CarService],
